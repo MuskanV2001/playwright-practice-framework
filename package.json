@@ -1,0 +1,22 @@
+{
+  "name": "playwright_practice_framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx bddgen && npx playwright test",
+    "test:chrome": "npx bddgen && npx playwright test --project=chromium",
+    "test:firefox": "npx bddgen && npx playwright test --project=firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  },
+  "dependencies": {
+    "playwright-bdd": "^8.5.0"
+  }
+}
