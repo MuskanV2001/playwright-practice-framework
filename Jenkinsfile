@@ -32,7 +32,13 @@ pipeline {
 
     post {
 
-        success 
+        success{
+            echo 'Test Passed!'
+        }
+
+        failure{
+            echo 'Test Failed!!'
+        }
 
     }
 
