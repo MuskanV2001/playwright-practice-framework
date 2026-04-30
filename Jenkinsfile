@@ -25,12 +25,11 @@ pipeline {
 
         stage('Running test script'){
             steps{  
-                bat 'npm run test:allure'
+                bat 'npm run testest:chrome'
             }
         }
 
     }
-
     post {
 
         success{
