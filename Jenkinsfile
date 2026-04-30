@@ -6,7 +6,8 @@ pipeline {
 
         stage('Git Checkout'){
             steps{
-                git 'https://github.com/MuskanV2001/playwright-practice-framework.git'
+                git branch: 'QA_Muskan',
+                url: 'https://github.com/MuskanV2001/playwright-practice-framework.git'
             }
         }
 
