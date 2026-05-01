@@ -1,7 +1,7 @@
 import { createBdd } from 'playwright-bdd';
 import { test } from '../../fixtures/appFixtures';
 
-const { Before, After } = createBdd(test);
+const { Before, After, BeforeStep, AfterStep, BeforeScenario, AfterScenario } = createBdd(test);
 
 Before(async({page})=>{
     await page.goto('https://practice.qabrains.com/ecommerce/login');
@@ -9,4 +9,23 @@ Before(async({page})=>{
 
 After(async({page})=>{
     await page.close();
+});
+
+BeforeStep(({ $step }) => {
+    console.log(`➡️  STEP START  ||  ${$step.title}`);
+});
+
+AfterStep(() => {
+    console.log("----------------------------------------------------------------------------------------------------------");
+});
+
+BeforeScenario(() => {
+    console.log("\n----------------------------------------------------------------------------------------------------------");
+    console.log("🧪  Test Started  🧪 ");
+    console.log("----------------------------------------------------------------------------------------------------------");
+});
+
+AfterScenario(() => {
+    console.log("✅  Test Passed  ✅ ")
+    console.log("----------------------------------------------------------------------------------------------------------");
 });
